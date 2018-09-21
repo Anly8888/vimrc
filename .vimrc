@@ -18,6 +18,8 @@ set backspace=indent,start,eol
 set ttimeout
 set ttimeoutlen=50                  "Eliminating the delays on ESC
 
+"set clipboard=unnamedplus           "default clipboard uses "+
+
 
 
 "---------------Plugins-------------------"
@@ -31,6 +33,10 @@ call vundle#begin()
 
 
 Plugin 'VundleVim/Vundle.vim'
+
+" per dir settings
+Plugin 'mantiz/vim-plugin-dirsettings'
+
 "Plugin 'tpope/vim-vinegar'
 "Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -72,8 +78,10 @@ Plugin 'peterhoeg/vim-qml'
 call vundle#end()                   " required
 filetype plugin indent on           " required
 
-"Load the man filetype plugin
-runtime! ftplugin/man.vim
+if !has('nvim')
+    "Load the man filetype plugin
+    runtime! ftplugin/man.vim
+endif
 
 
 
@@ -141,7 +149,7 @@ nmap <leader>l <c-w><c-l>
 "---------------Mapping-------------------"
 
 "Make it easier to edit the Vimrc file."
-map <leader>ev :tabedit $MYVIMRC<cr>
+map <leader>ev :tabedit ~/.vimrc<cr>
 
 "Add simple highlight removal.
 map <leader><space> :nohlsearch<cr>
@@ -157,6 +165,13 @@ map <space> <c-f>
 
 
 "---------------Plugins-------------------"
+
+"/
+"/ dirsettings
+"/
+
+call dirsettings#Install()
+
 
 "/
 "/ CtrlP
@@ -242,5 +257,5 @@ augroup end
 augroup openhelp
     " Open help in a vertical splitted window
     autocmd FileType help wincmd L
-    autocmd FileType help :vertical resize 80<cr>
+    "autocmd FileType help :vertical resize 80<cr>
 augroup end

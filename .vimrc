@@ -73,6 +73,9 @@ Plugin 'junegunn/vim-easy-align'
 " QML
 Plugin 'peterhoeg/vim-qml'
 
+" Asynchronous Lint Engine
+Plugin 'w0rp/ale'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()                   " required
@@ -183,7 +186,7 @@ call dirsettings#Install()
 " Excluding version control directories
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
-let g:ctrlp_custom_ignore = 'node_modules'
+"let g:ctrlp_custom_ignore = 'node_modules'
 
 " The maximum number of files to scan, set to 0 for no limit: 
 let g:ctrlp_max_files = 0

@@ -76,6 +76,11 @@ Plugin 'peterhoeg/vim-qml'
 " Asynchronous Lint Engine
 Plugin 'w0rp/ale'
 
+" You Complete Me
+Plugin 'Valloric/YouCompleteMe'
+
+" Input method switcher
+Plugin 'lyokha/vim-xkbswitch'
 
 " All of your Plugins must be added before the following line
 call vundle#end()                   " required
@@ -113,7 +118,7 @@ set guioptions-=r
 set guioptions-=R
 
 "Highlight current line
-set cursorline
+"set cursorline
 
 "Line number background
 "highlight LineNr ctermbg=bg
@@ -244,7 +249,10 @@ nmap gat vit:'<,'>EasyAlign 3/<t.>/ r0alllll<cr>
 vmap <leader>sn ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 
 
+"---------------vim-xkbswitch-------------------"
 
+let g:XkbSwitchEnabled = 1
+let g:XkbSwitchNLayout = 'us'
 
 
 

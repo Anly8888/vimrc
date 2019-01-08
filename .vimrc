@@ -39,10 +39,10 @@ Plugin 'mantiz/vim-plugin-dirsettings'
 
 "Plugin 'tpope/vim-vinegar'
 "Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'mileszs/ack.vim'
 "Plugin 'dkprice/vim-easygrep'
-"Plugin 'skwp/greplace.vim'
+Plugin 'skwp/greplace.vim'
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-surround'
@@ -82,6 +82,12 @@ Plugin 'Valloric/YouCompleteMe'
 " Input method switcher
 Plugin 'lyokha/vim-xkbswitch'
 
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
+Plugin 'junegunn/fzf', { 'do': './install --all' }
+
+" Paper color
+Plugin 'NLKNguyen/papercolor-theme'
+
 " All of your Plugins must be added before the following line
 call vundle#end()                   " required
 filetype plugin indent on           " required
@@ -106,7 +112,8 @@ set linespace=6                     "Macvim specific line-height.
 "---------------Visuals-------------------"
 
 
-colorscheme atom-dark-256
+set background=dark
+colorscheme PaperColor
 
 if has('gui_running')
     set guifont=Monaco:h18
@@ -162,9 +169,6 @@ map <leader>ev :tabedit ~/.vimrc<cr>
 "Add simple highlight removal.
 map <leader><space> :nohlsearch<cr>
 
-"Make NERDTree easier to toggle
-"map <D-1> :NERDTreeToggle<cr>
-
 "Use Space key to scroll down
 map <space> <c-f>
 
@@ -182,33 +186,15 @@ call dirsettings#Install()
 
 
 "/
-"/ CtrlP
+"/ fzf
 "/
 
-" CtrlP file list window
-" let g:ctrlp_match_window = 'top,order:btt,min:1,max:30,results:30'
-
-" Excluding version control directories
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-
-"let g:ctrlp_custom_ignore = 'node_modules'
-
-" The maximum number of files to scan, set to 0 for no limit: 
-let g:ctrlp_max_files = 0
-
-"/
-"/ ack
-"/
-
-"We use ag instead of ack
-let g:ackprg = 'ag --vimgrep'
+nmap <c-p> :FZF<cr>
 
 "/
 "/ greplace
 "/
-set grepprg=ag
-
-let g:grep_cmd_opts = '--line-numbers --noheading'
+set grepprg=rg\ -nH
 
 "/
 "/ Vim php namespace
@@ -233,6 +219,7 @@ autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 "/
 "/ easy align
 "/
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 

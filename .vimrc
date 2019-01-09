@@ -21,7 +21,6 @@ set ttimeoutlen=50                  "Eliminating the delays on ESC
 "set clipboard=unnamedplus           "default clipboard uses "+
 
 
-
 "---------------Plugins-------------------"
 
 
@@ -33,9 +32,6 @@ call vundle#begin()
 
 
 Plugin 'VundleVim/Vundle.vim'
-
-" per dir settings
-Plugin 'mantiz/vim-plugin-dirsettings'
 
 "Plugin 'tpope/vim-vinegar'
 "Plugin 'scrooloose/nerdtree'
@@ -257,3 +253,13 @@ augroup openhelp
     autocmd FileType help wincmd L
     "autocmd FileType help :vertical resize 80<cr>
 augroup end
+
+
+
+"---------------auto load .vimrc-------------------"
+
+"Enables the reading of .vimrc and .exrc in the current directory.
+"set exrc
+"shell and write commands are not allowed in
+"set secure
+

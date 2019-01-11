@@ -80,9 +80,19 @@ Plugin 'lyokha/vim-xkbswitch'
 
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
 Plugin 'junegunn/fzf', { 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 
 " Paper color
 Plugin 'NLKNguyen/papercolor-theme'
+
+" air line
+Plugin 'vim-airline/vim-airline'
+
+" tagbar
+"Plugin 'majutsushi/tagbar'
+
+" auto update tags
+Plugin 'ludovicchabant/vim-gutentags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()                   " required
@@ -175,13 +185,6 @@ map <space> <c-f>
 "---------------Plugins-------------------"
 
 "/
-"/ dirsettings
-"/
-
-call dirsettings#Install()
-
-
-"/
 "/ fzf
 "/
 
@@ -238,14 +241,13 @@ let g:XkbSwitchEnabled = 1
 let g:XkbSwitchNLayout = 'us'
 
 
-
 "---------------Auto-command-------------------"
 
 "Automatically source the Vimrc file on save.
 augroup autosourcing
-	"Remove all vimrc autocommands. 
-	autocmd!
-	autocmd BufWritePost .vimrc source %
+    "Remove all vimrc autocommands.
+    autocmd!
+    autocmd BufWritePost .vimrc source %
 augroup end
 
 augroup openhelp

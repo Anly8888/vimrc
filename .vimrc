@@ -86,7 +86,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 
 " air line
-Plugin 'vim-airline/vim-airline'
+" note: This plugin slows vim down
+"Plugin 'vim-airline/vim-airline'
 
 " tagbar
 "Plugin 'majutsushi/tagbar'

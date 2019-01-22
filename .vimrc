@@ -240,6 +240,11 @@ vmap <leader>sn ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr
 let g:XkbSwitchEnabled = 1
 let g:XkbSwitchNLayout = 'us'
 
+"/
+"/ Snippets
+"/
+let g:UltiSnipsExpandTrigger="<c-j>"
+
 
 "---------------Auto-command-------------------"
 

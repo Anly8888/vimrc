@@ -70,7 +70,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'peterhoeg/vim-qml'
 
 " Asynchronous Lint Engine
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 
 " You Complete Me
 Plugin 'Valloric/YouCompleteMe'

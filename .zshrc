@@ -99,3 +99,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gpom="git push origin HEAD:refs/for/master"
+alias gcom="git checkout origin/master"
+alias gfom="git fetch origin master:master"
+alias gdtvim="git difftool --tool"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -76,7 +76,7 @@ Plugin 'peterhoeg/vim-qml'
 Plugin 'Valloric/YouCompleteMe'
 
 " Input method switcher
-Plugin 'lyokha/vim-xkbswitch'
+Plugin 'rlue/vim-barbaric'
 
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
 Plugin 'junegunn/fzf', { 'do': './install --all' }
@@ -229,17 +229,21 @@ nmap ga <Plug>(EasyAlign)
 " Align markdown table columns
 nmap gat vit:'<,'>EasyAlign 3/<t.>/ r0alllll<cr>
 
+"---------------Input method-------------------"
+
+"/
+"/ rlue/vim-barbaric
+"/
+
+" The input method for Normal mode (as defined by `xkbswitch -g` or `ibus engine`)
+let g:barbaric_default = 0
+
 
 "---------------PHP lang-------------------"
 
 " Sort selected lines by length
 vmap <leader>sn ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 
-
-"---------------vim-xkbswitch-------------------"
-
-let g:XkbSwitchEnabled = 1
-let g:XkbSwitchNLayout = 'us'
 
 "/
 "/ Snippets

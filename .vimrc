@@ -236,7 +236,10 @@ nmap gat vit:'<,'>EasyAlign 3/<t.>/ r0alllll<cr>
 "/
 
 " The input method for Normal mode (as defined by `xkbswitch -g` or `ibus engine`)
-let g:barbaric_default = 0
+
+if has('mac')
+    let g:barbaric_default = 0
+endif
 
 
 "---------------PHP lang-------------------"

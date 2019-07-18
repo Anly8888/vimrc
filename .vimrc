@@ -73,7 +73,7 @@ Plugin 'peterhoeg/vim-qml'
 "Plugin 'w0rp/ale'
 
 " You Complete Me
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe', {'pinned': 1}
 
 " Input method switcher
 Plugin 'rlue/vim-barbaric'

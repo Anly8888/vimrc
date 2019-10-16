@@ -95,6 +95,9 @@ Plugin 'NLKNguyen/papercolor-theme'
 " auto update tags
 Plugin 'ludovicchabant/vim-gutentags'
 
+" line diff
+Plugin 'AndrewRadev/linediff.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()                   " required
 filetype plugin indent on           " required

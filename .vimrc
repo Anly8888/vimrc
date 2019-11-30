@@ -98,6 +98,9 @@ Plugin 'ludovicchabant/vim-gutentags'
 " line diff
 Plugin 'AndrewRadev/linediff.vim'
 
+" python indent
+Plugin 'Vimjas/vim-python-pep8-indent'
+
 " All of your Plugins must be added before the following line
 call vundle#end()                   " required
 filetype plugin indent on           " required
@@ -231,6 +234,18 @@ nmap ga <Plug>(EasyAlign)
 
 " Align markdown table columns
 nmap gat vit:'<,'>EasyAlign 3/<t.>/ r0alllll<cr>
+
+"/
+"/ you complete me
+"/
+
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+
+nmap <f2> :YcmCompleter GoTo<cr>
+nmap <f4> :YcmCompleter GoToInclude<cr>
 
 "---------------Input method-------------------"
 

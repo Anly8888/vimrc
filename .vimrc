@@ -161,6 +161,7 @@ highlight vertsplit ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 set hlsearch
 set incsearch
 set ignorecase
+set smarttab
 
 
 
@@ -187,6 +188,14 @@ map <leader><space> :nohlsearch<cr>
 
 "Use Space key to scroll down
 map <space> <c-f>
+
+"Open current file in Google Chrome
+if has('mac')
+    command Chrome silent exe "!open -a 'Google Chrome'" shellescape("%") | redraw!
+else
+    command Chrome silent exe "!google-chrome" shellescape("%") | redraw!
+endif
+map <leader>c :Chrome<cr>
 
 
 
@@ -228,6 +237,31 @@ autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 "/
 "/ easy align
 "/
+
+let g:easy_align_delimiters = {
+\ '>': { 'pattern': '>>\|=>\|>' },
+\ '/': {
+\     'pattern':         '//\+\|/\*\|\*/',
+\     'delimiter_align': 'l',
+\     'ignore_groups':   ['!Comment'] },
+\ ']': {
+\     'pattern':       '[[\]]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ ')': {
+\     'pattern':       '[()]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ 'd': {
+\     'pattern':      ' \(\S\+\s*[;=]\)\@=',
+\     'left_margin':  0,
+\     'right_margin': 0
+\   }
+\ }
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)

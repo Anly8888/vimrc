@@ -66,6 +66,7 @@ plugins=(
   git
   fasd
   vi-mode
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,4 +110,4 @@ alias gfom="git fetch origin master:master"
 alias gdtvim="git difftool --tool=vimdiff"
 alias keil='env WINEPREFIX="$HOME/.wine" wine c:\\Keil\\UV4\\UV4.EXE'
 alias photoshop='LC_ALL=zh_CN.UTF-8 WINEPREFIX=~/.photoshop WINEARCH=win32 wine ~/.photoshop/drive_c/Program\ Files/Adobe/Adobe\ Photoshop\ CS6/Photoshop.exe'
-alias ap="all_proxy=socks://127.0.0.1:10809 http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123"
+alias ap="all_proxy=socks5://127.0.0.1:10809 http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123"

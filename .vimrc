@@ -104,8 +104,8 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 " vifm
 Plugin 'vifm/vifm.vim'
 
-" commentary
-Plugin 'tpope/vim-commentary'
+" comments
+Plugin 'tomtom/tcomment_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()                   " required

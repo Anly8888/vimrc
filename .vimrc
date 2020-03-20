@@ -4,6 +4,7 @@ syntax enable
 
 let mapleader=","                   "The default leader is \, but a comma is much better.
 "set number                         "Let's activate the line numbers.
+set scrolloff=5
 
 set tabstop=4
 set expandtab

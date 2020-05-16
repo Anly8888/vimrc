@@ -34,21 +34,10 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'tpope/vim-vinegar'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'mileszs/ack.vim'
-"Plugin 'dkprice/vim-easygrep'
 Plugin 'skwp/greplace.vim'
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-surround'
-"Plugin 'StanAngeloff/php.vim'
-Plugin 'arnaud-lb/vim-php-namespace'
-"Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
-"Plugin 'jiangmiao/auto-pairs'
 
 " git
 Plugin 'tpope/vim-fugitive'
@@ -61,7 +50,7 @@ Plugin 'nelstrom/vim-markdown-folding'
 
 " Plantuml
 Plugin 'aklt/plantuml-syntax'
-Plugin 'tyru/open-browser.vim'
+"Plugin 'tyru/open-browser.vim'
 Plugin 'weirongxu/plantuml-previewer.vim'
 
 " easy align
@@ -69,9 +58,6 @@ Plugin 'junegunn/vim-easy-align'
 
 " QML
 Plugin 'peterhoeg/vim-qml'
-
-" Asynchronous Lint Engine
-"Plugin 'w0rp/ale'
 
 " You Complete Me
 Plugin 'Valloric/YouCompleteMe', {'pinned': 1}
@@ -86,13 +72,6 @@ Plugin 'junegunn/fzf.vim'
 " Paper color
 Plugin 'NLKNguyen/papercolor-theme'
 
-" air line
-" note: This plugin slows vim down
-"Plugin 'vim-airline/vim-airline'
-
-" tagbar
-"Plugin 'majutsushi/tagbar'
-
 " auto update tags
 Plugin 'ludovicchabant/vim-gutentags'
 
@@ -102,11 +81,11 @@ Plugin 'AndrewRadev/linediff.vim'
 " python indent
 Plugin 'Vimjas/vim-python-pep8-indent'
 
-" vifm
-Plugin 'vifm/vifm.vim'
-
 " comments
 Plugin 'tomtom/tcomment_vim'
+
+" indent object
+Plugin 'michaeljsmith/vim-indent-object'
 
 " All of your Plugins must be added before the following line
 call vundle#end()                   " required
@@ -143,16 +122,6 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-
-"Highlight current line
-"set cursorline
-
-"Line number background
-"highlight LineNr ctermbg=bg
-
-"Left margin
-"set foldcolumn=2
-"highlight foldcolumn ctermbg=bg
 
 highlight vertsplit ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
@@ -195,9 +164,9 @@ map <space> <c-f>
 
 "Open current file in Google Chrome
 if has('mac')
-    command Chrome silent exe "!open -a 'Google Chrome'" shellescape("%") | redraw!
+    command! Chrome silent exe "!open -a 'Google Chrome'" shellescape("%") | redraw!
 else
-    command Chrome silent exe "!google-chrome" shellescape("%") | redraw!
+    command! Chrome silent exe "!google-chrome" shellescape("%") | redraw!
 endif
 map <leader>c :Chrome<cr>
 
@@ -218,25 +187,6 @@ nmap <c-p> :FZF<cr>
 "/
 set grepprg=rg\ -nH
 
-"/
-"/ Vim php namespace
-"/
-
-" Insert use namespace
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
-
-" Expand to full quoted namespace
-function! IPhpExpandClass()
-    call PhpExpandClass()
-    call feedkeys('a', 'n')
-endfunction
-autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
-autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
 "/
 "/ easy align
@@ -300,11 +250,6 @@ if has('mac')
     let g:barbaric_default = 0
 endif
 
-
-"---------------PHP lang-------------------"
-
-" Sort selected lines by length
-vmap <leader>sn ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 
 
 "/

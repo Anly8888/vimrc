@@ -59,8 +59,8 @@ Plugin 'junegunn/vim-easy-align'
 " QML
 Plugin 'peterhoeg/vim-qml'
 
-" You Complete Me
-Plugin 'Valloric/YouCompleteMe', {'pinned': 1}
+" clang-complete
+Plugin 'xavierd/clang_complete'
 
 " Input method switcher
 Plugin 'rlue/vim-barbaric'
@@ -95,7 +95,6 @@ if !has('nvim')
     "Load the man filetype plugin
     runtime! ftplugin/man.vim
 endif
-
 
 
 
@@ -226,17 +225,16 @@ nmap ga <Plug>(EasyAlign)
 " Align markdown table columns
 nmap gat vit:'<,'>EasyAlign 3/<t.>/ r0alllll<cr>
 
-"/
-"/ you complete me
-"/
 
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-
-nmap <f2> :YcmCompleter GoTo<cr>
-nmap <f4> :YcmCompleter GoToInclude<cr>
+"/
+"/ clang-complete
+"/
+if has('mac')
+    let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+else
+    let g:clang_library_path='/usr/lib/llvm-10/lib'
+endif
+let g:clang_user_options='-std=c++17'
 
 "---------------Input method-------------------"
 

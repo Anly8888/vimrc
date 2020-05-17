@@ -25,74 +25,70 @@ set ttimeoutlen=50                  "Eliminating the delays on ESC
 "---------------Plugins-------------------"
 
 
-filetype off                        " required
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'skwp/greplace.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
-Plugin 'posva/vim-vue'
+Plug 'skwp/greplace.vim'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+Plug 'posva/vim-vue'
 
 " git
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " markdown folding
-Plugin 'nelstrom/vim-markdown-folding'
+Plug 'nelstrom/vim-markdown-folding'
 
 " Plantuml
-Plugin 'aklt/plantuml-syntax'
-"Plugin 'tyru/open-browser.vim'
-Plugin 'weirongxu/plantuml-previewer.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
 
 " easy align
-Plugin 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
 " QML
-Plugin 'peterhoeg/vim-qml'
+Plug 'peterhoeg/vim-qml'
 
 " You Complete Me
-Plugin 'Valloric/YouCompleteMe', {'pinned': 1}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " clang-complete
 "Plugin 'xavierd/clang_complete'
 
 " Input method switcher
-Plugin 'rlue/vim-barbaric'
+Plug 'rlue/vim-barbaric'
 
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
-Plugin 'junegunn/fzf', { 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Paper color
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 
 " auto update tags
-Plugin 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 
 " line diff
-Plugin 'AndrewRadev/linediff.vim'
+Plug 'AndrewRadev/linediff.vim'
 
 " python indent
-Plugin 'Vimjas/vim-python-pep8-indent'
+Plug 'Vimjas/vim-python-pep8-indent'
 
 " comments
-Plugin 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 
 " indent object
-Plugin 'michaeljsmith/vim-indent-object'
+Plug 'michaeljsmith/vim-indent-object'
 
-" All of your Plugins must be added before the following line
-call vundle#end()                   " required
-filetype plugin indent on           " required
+" Initialize plugin system
+call plug#end()
+
 
 if !has('nvim')
     "Load the man filetype plugin

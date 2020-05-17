@@ -19,7 +19,21 @@ set backspace=indent,start,eol
 set ttimeout
 set ttimeoutlen=50                  "Eliminating the delays on ESC
 
-"set clipboard=unnamedplus           "default clipboard uses "+
+set clipboard=unnamed               "default clipboard uses "+
+
+" Enable OS mouse clicking and scrolling
+"
+" Note for Mac OS X: Requires SIMBL and MouseTerm
+"
+" http://www.culater.net/software/SIMBL/SIMBL.php
+" https://bitheap.org/mouseterm/
+if has("mouse")
+    set mouse=a
+endif
+
+set autowrite
+" The current buffer can be put to the background without writing to disk
+set hidden
 
 
 "---------------Plugins-------------------"

@@ -298,6 +298,20 @@ augroup openhelp
 augroup end
 
 
+"---------------functions-------------------"
+
+pyx <<EOF
+def renumber(start=0):
+    import re
+    for n in range(vim.current.range.start, vim.current.range.end+1):
+        m = re.search(r'^[0-9a-fA-F]{4}(/(\d+))?', vim.current.buffer[n])
+        if m:
+            s = vim.current.buffer[n]
+            s = s.replace(s[0:4], f'{start:04X}', 1)
+            vim.current.buffer[n] = s
+            start += 1 if m.group(2) is None else int(m.group(2))
+EOF
+
 
 "---------------auto load .vimrc-------------------"
 

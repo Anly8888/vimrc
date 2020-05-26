@@ -301,16 +301,27 @@ augroup end
 "---------------functions-------------------"
 
 pyx <<EOF
-def renumber(start=0):
+# 自动按HEX重新排列序号, 用于rst文档表格
+def renumber(start=None):
     import re
-    for n in range(vim.current.range.start, vim.current.range.end+1):
-        m = re.search(r'^[0-9a-fA-F]{4}(/(\d+))?', vim.current.buffer[n])
+    if vim.current.range.start == vim.current.range.end:
+        at_end = lambda n: re.match(r'^\s*$', vim.current.buffer[n])
+    else:
+        at_end = lambda n: n>vim.current.range.end
+    n = vim.current.range.start
+    while not at_end(n):
+        m = re.search(r'^([0-9a-fA-F]{4})(/(\d+))?', vim.current.buffer[n])
         if m:
             s = vim.current.buffer[n]
-            s = s.replace(s[0:4], f'{start:04X}', 1)
-            vim.current.buffer[n] = s
-            start += 1 if m.group(2) is None else int(m.group(2))
+            if start is None:
+                start = int(m.group(1), 16)
+            else:
+                s = s.replace(s[0:4], f'{start:04X}', 1)
+                vim.current.buffer[n] = s
+            start += 1 if m.group(3) is None else int(m.group(3))
+        n += 1
 EOF
+command! -nargs=? -range Renumber :pyx renumber(<args>)
 
 
 "---------------auto load .vimrc-------------------"

@@ -304,12 +304,18 @@ py3 <<EOF
 # 自动按HEX重新排列序号, 用于rst文档表格
 def renumber(start=None):
     import re
-    if vim.current.range.start == vim.current.range.end:
-        at_end = lambda n: re.match(r'^\s*$', vim.current.buffer[n])
-    else:
-        at_end = lambda n: n>vim.current.range.end
-    n = vim.current.range.start
-    while not at_end(n):
+    start_line = vim.current.range.start
+    end_line = vim.current.range.end + 1
+    if start_line + 1 == end_line:
+        for n in range(start_line, -1, -1):
+            if re.match(r'^(\s|=)+$', vim.current.buffer[n]):
+                break
+        start_line = n
+        for n in range(end_line, len(vim.current.buffer)):
+            if re.match(r'^(\s|=)+$', vim.current.buffer[n]):
+                break
+        end_line = n
+    for n in range(start_line, end_line):
         m = re.search(r'^([0-9a-fA-F]{4})(/(\d+))?', vim.current.buffer[n])
         if m:
             s = vim.current.buffer[n]
@@ -320,6 +326,7 @@ def renumber(start=None):
                 vim.current.buffer[n] = s
             start += 1 if m.group(3) is None else int(m.group(3))
         n += 1
+    print(f'{start_line+1}-{end_line+1} {end_line-start_line} lines processed')
 EOF
 command! -nargs=? -range Renumber :<line1>,<line2>py3 renumber(<args>)
 

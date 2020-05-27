@@ -300,7 +300,7 @@ augroup end
 
 "---------------functions-------------------"
 
-pyx <<EOF
+py3 <<EOF
 # 自动按HEX重新排列序号, 用于rst文档表格
 def renumber(start=None):
     import re
@@ -321,7 +321,7 @@ def renumber(start=None):
             start += 1 if m.group(3) is None else int(m.group(3))
         n += 1
 EOF
-command! -nargs=? -range Renumber :pyx renumber(<args>)
+command! -nargs=? -range Renumber :<line1>,<line2>py3 renumber(<args>)
 
 
 "---------------auto load .vimrc-------------------"

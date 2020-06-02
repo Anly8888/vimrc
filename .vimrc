@@ -19,7 +19,7 @@ set backspace=indent,start,eol
 set ttimeout
 set ttimeoutlen=50                  "Eliminating the delays on ESC
 
-set clipboard=unnamed               "default clipboard uses "+
+"set clipboard=unnamed               "default clipboard uses "+
 
 " Enable OS mouse clicking and scrolling
 "

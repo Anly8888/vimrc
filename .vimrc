@@ -70,7 +70,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'peterhoeg/vim-qml'
 
 " You Complete Me
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer --clang-completer --clang-tidy' }
 
 " clang-complete
 "Plugin 'xavierd/clang_complete'

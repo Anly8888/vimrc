@@ -182,6 +182,8 @@ else
 endif
 map <leader>c :Chrome<cr>
 
+" Sort selected lines by length
+vmap <leader>sn ! awk '{ print length(), $0 \| "sort -n \| cut -d\\\  -f2-"}'<cr>
 
 
 

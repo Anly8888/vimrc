@@ -199,7 +199,8 @@ nmap <c-p> :FZF<cr>
 "/
 "/ greplace
 "/
-set grepprg=rg\ -nH
+set grepprg=rg
+let g:grep_cmd_opts = '-nH'
 
 
 "/

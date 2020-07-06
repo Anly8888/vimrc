@@ -264,6 +264,12 @@ nmap <f4> :YcmCompleter GoToInclude<cr>
 "endif
 "let g:clang_user_options='-std=c++17'
 
+"/
+"/ fugitive
+"/
+
+command Gpom Git push origin HEAD:refs/for/master
+
 "---------------Input method-------------------"
 
 "/

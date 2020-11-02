@@ -27,9 +27,9 @@ set ttimeoutlen=50                  "Eliminating the delays on ESC
 "
 " http://www.culater.net/software/SIMBL/SIMBL.php
 " https://bitheap.org/mouseterm/
-if has("mouse")
-    set mouse=a
-endif
+" if has("mouse")
+"     set mouse=a
+" endif
 
 set autowrite
 " The current buffer can be put to the background without writing to disk

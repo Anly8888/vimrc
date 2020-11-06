@@ -55,9 +55,6 @@ Plug 'tpope/vim-fugitive'
 " Snippets
 Plug 'SirVer/ultisnips'
 
-" markdown folding
-Plug 'nelstrom/vim-markdown-folding'
-
 " Plantuml
 Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
@@ -99,6 +96,9 @@ Plug 'tomtom/tcomment_vim'
 
 " indent object
 Plug 'michaeljsmith/vim-indent-object'
+
+" Vim Outliner of Markups
+Plug 'vim-voom/VOoM'
 
 " Initialize plugin system
 call plug#end()

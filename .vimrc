@@ -66,12 +66,6 @@ Plug 'junegunn/vim-easy-align'
 " QML
 Plug 'peterhoeg/vim-qml'
 
-" You Complete Me
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
-
-" clang-complete
-"Plugin 'xavierd/clang_complete'
-
 " Input method switcher
 Plug 'rlue/vim-barbaric'
 
@@ -242,33 +236,16 @@ nmap ga <Plug>(EasyAlign)
 nmap gat vit:'<,'>EasyAlign 3/<t.>/ r0alllll<cr>
 
 "/
-"/ you complete me
-"/
-
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-"let g:ycm_global_ycm_extra_conf = '~/projects/vimrc/.ycm_extra_conf.py'
-
-nmap <f2> :YcmCompleter GoTo<cr>
-nmap <f4> :YcmCompleter GoToInclude<cr>
-
-"/
-"/ clang-complete
-"/
-"if has('mac')
-"    let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-"else
-"    let g:clang_library_path='/usr/lib/llvm-10/lib'
-"endif
-"let g:clang_user_options='-std=c++17'
-
-"/
 "/ fugitive
 "/
 
 command Gpom Git push origin HEAD:refs/for/master
+
+"/
+"/ Man
+"/
+
+let g:ft_man_open_mode = 'vert'
 
 "---------------Input method-------------------"
 

@@ -179,6 +179,8 @@ map <leader>c :Chrome<cr>
 " Sort selected lines by length
 vmap <leader>sn ! awk '{ print length(), $0 \| "sort -n \| cut -d\\\  -f2-"}'<cr>
 
+" fasd -d
+command! -nargs=* Z :execute 'cd ' . system('fasd -1 -d <args>') . ''
 
 
 

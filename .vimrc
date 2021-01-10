@@ -94,6 +94,9 @@ Plug 'michaeljsmith/vim-indent-object'
 " Vim Outliner of Markups
 Plug 'vim-voom/VOoM'
 
+" Conquer Of Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Initialize plugin system
 call plug#end()
 
@@ -267,6 +270,23 @@ endif
 "/ Snippets
 "/
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+
+"---------------Conquer Of Completion-------------------"
+
+"/
+"/ coc: Conquer Of Completion
+"/
+"/ run command
+"/  :CocInstall coc-xxx
+"/ to install coc extensions
+"/
+"/ ref: https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+"/
+
+"/
+"/ CocInstall coc-tsserver
+"/
 
 
 "---------------Auto-command-------------------"

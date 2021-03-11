@@ -185,6 +185,8 @@ vmap <leader>sn ! awk '{ print length(), $0 \| "sort -n \| cut -d\\\  -f2-"}'<cr
 " fasd -d
 command! -nargs=* Z :execute 'cd ' . system('fasd -1 -d <args>') . ''
 
+" <cr> accepts completion
+inoremap <CR> <C-R>=pumvisible() ? "\<lt>C-Y>" : "\<lt>CR>"<CR>
 
 
 "---------------Plugins-------------------"

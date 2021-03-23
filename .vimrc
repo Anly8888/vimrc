@@ -186,7 +186,7 @@ vmap <leader>sn ! awk '{ print length(), $0 \| "sort -n \| cut -d\\\  -f2-"}'<cr
 command! -nargs=* Z :execute 'cd ' . system('fasd -1 -d <args>') . ''
 
 " <tab> accepts completion
-inoremap <TAB> <C-R>=pumvisible() ? "\<lt>C-Y>" : "\<lt>CR>"<CR>
+inoremap <TAB> <C-R>=pumvisible() ? "\<lt>C-Y>" : "\<lt>TAB>"<CR>
 
 
 "---------------Plugins-------------------"

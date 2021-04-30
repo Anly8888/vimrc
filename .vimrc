@@ -77,7 +77,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " auto update tags
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 " line diff
 Plug 'AndrewRadev/linediff.vim'

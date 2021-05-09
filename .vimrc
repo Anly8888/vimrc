@@ -45,6 +45,13 @@ set hidden
 call plug#begin('~/.vim/plugged')
 
 Plug 'skwp/greplace.vim'
+Plug 'vim-scripts/ReplaceWithRegister'
+" switch source/header file
+Plug 'vim-scripts/a.vim'
+" argument text object
+Plug 'vim-scripts/argtextobj.vim'
+" exchange text object
+Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'posva/vim-vue'

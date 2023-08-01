@@ -35,6 +35,7 @@ set autowrite
 " The current buffer can be put to the background without writing to disk
 set hidden
 
+let g:python3_host_prog='/usr/bin/python3'
 
 "---------------Plugins-------------------"
 
